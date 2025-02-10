@@ -10,7 +10,7 @@
  
 simple.lotka.r<-function(yrs = 1,mort = NULL,fecund = NULL,ages = NULL) 
 {  
-  
+  #browser()
   
   # The Euler-Lotka Function to optimize on to find the intrinsic rate of growth for your population
   eulerlotka <- function(r) (sum(lx * mx * exp(-r * ages)) - 1)^2
@@ -24,7 +24,6 @@ simple.lotka.r<-function(yrs = 1,mort = NULL,fecund = NULL,ages = NULL)
   # Now run this through all the yrs 
   for(j in 1:(n.yrs))
   { 
-    #browser() 
     # Get the r estimate for each year if we are running through a bunch of years
     # Just use the first year if we don't have same length nat.mort as years
     if(!is.null(nrow(mort))) lx <- 1-exp(-mort[j,]) else lx <- 1-exp(-mort)
@@ -34,7 +33,6 @@ simple.lotka.r<-function(yrs = 1,mort = NULL,fecund = NULL,ages = NULL)
     lx<-1
     # And get cumulative survivorship for the stock
     for(s in 2:(length(si))) lx[s]<-lx[s-1]*si[s-1]
-    #browser()
     if(!is.null(nrow(fecund))) mx <- fecund[j,] else mx <- fecund
     # Now we are cooking!
     junk<-optimize(lower=-15,upper=15,f = eulerlotka)
@@ -44,6 +42,8 @@ simple.lotka.r<-function(yrs = 1,mort = NULL,fecund = NULL,ages = NULL)
     lx.tmp[[j]] <- lx
     #browser()
   } # end for(j in 1:(n.yrs-1))
+
+  browser()
   
   mx.mat <- do.call("rbind",mx.tmp)
   lx.mat <- do.call('rbind',lx.tmp)

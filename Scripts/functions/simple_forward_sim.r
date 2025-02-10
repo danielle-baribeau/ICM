@@ -27,7 +27,7 @@
 simp.for.sim<-function(years,nm=NULL,fecund = NULL,ages =NULL,rems,K=NULL,N.start = NULL,
                        pop.model = "exponential", n.sims=1,sim = 'retro', repo.loc = 'repo')
 {
-
+#loading necessary functions here
   if(repo.loc == 'repo')
   {
   # Download the function to go from inla to sf
@@ -52,12 +52,15 @@ simp.for.sim<-function(years,nm=NULL,fecund = NULL,ages =NULL,rems,K=NULL,N.star
   # In case I try to be lazy and shorten names...
   if(pop.model == 'exp') pop.model <- 'exponential'
   if(pop.model == 'log') pop.model <- 'logistic'
-  # If doing the projections we start from the year before the simulations period, so we add in the N.start year.
-  #if(years > 1)  
-  years <- c(min(years)-1,years)
+  #are the following three lines no longer relevant? if statement was originally commented out
+    # If doing the projections we start from the year before the simulations period, so we add in the N.start year.
+    #if(years > 1) 
+    #years <- c(min(years),years)
   #Initialize a bunch of objects
-  n.years<-length(years)
-  Pop<-data.frame(abund = rep(NA,n.years*n.sims),sim = rep(1:n.sims,n.years),years = sort(rep(years,n.sims)))   
+  n.years<-(length(years))
+  #number of years for the simulation
+  Pop<-data.frame(abund = rep(NA,n.years*n.sims),sim = rep(1:n.sims,n.years),years = sort(rep(years,n.sims)))
+  #empty data frame designed to hold population abundance, sim iteration, and years
   Pop.vec<-rep(NA,n.years)
   rem<-rep(NA,n.years)
   r.vec<-NULL
@@ -68,11 +71,13 @@ simp.for.sim<-function(years,nm=NULL,fecund = NULL,ages =NULL,rems,K=NULL,N.star
   #Calculate r for your example
   for(i in 1:n.sims)
   {
-    #browser()
     # Using the fecundity and mortality data get the lotka r's for the stock
     # DK Note: It might make more sense to put the fishing mortality right into here as we've now done with the backwards simulations.
+      #this is where the GOM error is coming in - optimizer inside Lotka
+        #optimizer searches a function within a given interval and (in this case) returns the minimum value
     if(max(years) > 1) junk<-simple.lotka.r(yrs = years,mort = nm,ages=ages,fecund=fecund)   
     if(max(years) == 1) junk<-simple.lotka.r(yrs = years,mort = c(nm),ages=ages,fecund=c(fecund))
+      #what does this second line do?
     tmp <-junk$res[,2] 
     if(length(tmp) == 1) tmp <- rep(tmp,n.years)
     r.vec[[i]] <- data.frame(r = c(tmp[-length(tmp)],NA),years = years[],n.sims=i) # How I have it set up the last entry should be an NA  as we don't use that
