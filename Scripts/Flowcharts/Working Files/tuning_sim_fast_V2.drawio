@@ -1,0 +1,377 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0" version="26.2.14">
+  <diagram name="Page-1" id="6FFi2cs7OTPLeLi-_y4E">
+    <mxGraphModel dx="1034" dy="1800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;tuning_sim_fast&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Inputs: stock assessment data (years, age class, M, fecundity at age, F, total abundance time series, abundance at age and catch at age), tuner type, and whether you want to project forwards or backwards (this flowchart is made for the tuner type that uses M and fecundity values)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Outputs: tuned series of biological parameters for a given stock (annual lambdas, abundances, removals, average fecundity at age and M at age) (outputs of this function are the outputs of the LTR)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="-1100" width="710" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-2" target="leyQQa6ndQBqsF3oJYMS-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#97D077;" vertex="1" parent="1">
+          <mxGeometry x="395" y="-950" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-3" target="leyQQa6ndQBqsF3oJYMS-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-3" value="Set up the initial abundance for the first iteration of the tuning simulation (77)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D4E1F5;" vertex="1" parent="1">
+          <mxGeometry x="327.5" y="-420" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-4" target="leyQQa6ndQBqsF3oJYMS-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-4" value="Initialize objects to hold reference points, temporary values, average total removals, and final results (51-71)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D4E1F5;" vertex="1" parent="1">
+          <mxGeometry x="320" y="-830" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-5" target="leyQQa6ndQBqsF3oJYMS-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-5" value="IF projection is forwards" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="235" y="-640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-6" target="leyQQa6ndQBqsF3oJYMS-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-6" target="leyQQa6ndQBqsF3oJYMS-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-6" value="Evaluate the type of projection input by the user:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="345" y="-730" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-7" target="leyQQa6ndQBqsF3oJYMS-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-7" value="IF projection is backwards" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="455" y="-640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="-420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-9" value="Set simulation to stop at the second-last year of data (75)&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Evaluate%20the%20type%20of%20projection%20input%20by%20the%20user%3A%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3BfillColor%3D%23FFD966%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22340%22%20y%3D%22-730%22%20width%3D%22120%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="235" y="-520" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-10" target="leyQQa6ndQBqsF3oJYMS-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-10" value="Set simulation to start at the second-last year of data (74)&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Evaluate%20the%20type%20of%20projection%20input%20by%20the%20user%3A%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3BfillColor%3D%23FFD966%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22340%22%20y%3D%22-730%22%20width%3D%22120%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="455" y="-520" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-34" target="leyQQa6ndQBqsF3oJYMS-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-34" value="Load functions (35-41)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D4E1F5;" vertex="1" parent="1">
+          <mxGeometry x="345" y="-900" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-35" target="leyQQa6ndQBqsF3oJYMS-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-35" value="Start the tuning simulation:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D4E1F5;" vertex="1" parent="1">
+          <mxGeometry x="327.5" y="-300" width="145" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-37" target="leyQQa6ndQBqsF3oJYMS-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-37" value="FOR y in y.index" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="777.5" y="-325" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-146" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-76" target="leyQQa6ndQBqsF3oJYMS-86">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-76" value="Store the results of the simulation in the previously initialized results objects (459-497)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="765" y="2220" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-77" target="leyQQa6ndQBqsF3oJYMS-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-77" value="IF max(count) == 1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="947.5" y="1950" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-145" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-78" target="leyQQa6ndQBqsF3oJYMS-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-78" value="Store the results the sole iteration of the while loop as the output values (450-455)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="917.5" y="2075" width="180" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-143" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-79" target="leyQQa6ndQBqsF3oJYMS-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-79" value="Evaluate the counter:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1975" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-11" target="leyQQa6ndQBqsF3oJYMS-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-11" value="Calculate the theoretical population growth estimates based on M and fecundity inputs from stock assessment data (79-133)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="752.5" y="-200" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-12" target="leyQQa6ndQBqsF3oJYMS-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-12" value="simple_Lotka_r()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#E6D0DE;" vertex="1" parent="1">
+          <mxGeometry x="990" y="-195" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-39" target="leyQQa6ndQBqsF3oJYMS-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-39" value="WHILE r.est &amp;gt; 10" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="980" y="-80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-40" target="leyQQa6ndQBqsF3oJYMS-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-40" value="Evaluate results:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="780" y="-50" width="115" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-41" target="leyQQa6ndQBqsF3oJYMS-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-41" value="Reduce fecundity values by 10% and increase M values by 10% (120-126)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="982.5" y="30" width="115" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-68" target="leyQQa6ndQBqsF3oJYMS-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-68" value="Reduce fecundity values by 10% and increase M values by 10% (120-126)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="980" y="120" width="115" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-69" target="leyQQa6ndQBqsF3oJYMS-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-69" target="leyQQa6ndQBqsF3oJYMS-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-69" value="Re-evaluate condition of while loop:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="980" y="210" width="115" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-70" target="leyQQa6ndQBqsF3oJYMS-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-70" value="TRUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="225" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-71" target="leyQQa6ndQBqsF3oJYMS-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-71" value="FALSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1012.5" y="300" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-13" target="leyQQa6ndQBqsF3oJYMS-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-13" target="leyQQa6ndQBqsF3oJYMS-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-13" value="Evaluate the type of projection input by the user:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="790" y="350" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-14" target="leyQQa6ndQBqsF3oJYMS-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-14" value="IF projection is forwards" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="680" y="440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-15" target="leyQQa6ndQBqsF3oJYMS-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-15" value="IF projection is backwards" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="900" y="440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-16" value="Project population growth forwards using an exponential model (148-155)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="680" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-121" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-18" target="leyQQa6ndQBqsF3oJYMS-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-18" value="Project population growth backwards using an exponential model (136-141)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="900" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-19" target="leyQQa6ndQBqsF3oJYMS-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-19" value="back.proj()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#E6D0DE;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="550" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-20" target="leyQQa6ndQBqsF3oJYMS-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-20" value="for.proj()" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#E6D0DE;" vertex="1" parent="1">
+          <mxGeometry x="540" y="550" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-21" target="leyQQa6ndQBqsF3oJYMS-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-21" value="Calculate the difference in abundance between the exponential and stock assessment data models (142-145, 156-159)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="765" y="650" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-22" target="leyQQa6ndQBqsF3oJYMS-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-22" value="Compare the theoretical abundance time series to the exponential model of projected abundance by setting up a series of T/F conditions (161-172)&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="765" y="770" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-23" target="leyQQa6ndQBqsF3oJYMS-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-23" value="WHILE projected values are too far from theoretical values:" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="745" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-24" target="leyQQa6ndQBqsF3oJYMS-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-24" value="Figure out in which direction (increase or decrease) to tune the M and fecundity input values:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1200" width="155" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-26" target="leyQQa6ndQBqsF3oJYMS-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-26" value="Initialize a counter to record the number of times the while loop is initiated (181)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-129" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-27" target="leyQQa6ndQBqsF3oJYMS-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-27" value="IF count == 1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1027.5" y="1100" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-28" target="leyQQa6ndQBqsF3oJYMS-82">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-28" value="IF count &amp;gt; 1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1292.5" y="1100" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-131" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-29" target="leyQQa6ndQBqsF3oJYMS-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-29" value="Calculate the increased/decreased values of M and fecundity (186-227)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1310" width="155" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-30" target="leyQQa6ndQBqsF3oJYMS-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-30" target="leyQQa6ndQBqsF3oJYMS-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-30" value="Evaluate the counter:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="1030" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-72" target="leyQQa6ndQBqsF3oJYMS-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-72" value="Recalculate population growth rates using the increased/decreased M and fecundity values (231-250)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1420" width="155" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-73" target="leyQQa6ndQBqsF3oJYMS-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-73" value="Use the increased/decreased population growth rates to reproject abundance estimates (252-282)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1530" width="155" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-74" target="leyQQa6ndQBqsF3oJYMS-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-74" value="Assess whether the increased or decreased population growth rates yielded the closer result, then assign the &quot;correct&quot; new values to M and fecundity (286-314)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="997.5" y="1650" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-75" target="leyQQa6ndQBqsF3oJYMS-80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-140" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-75" target="leyQQa6ndQBqsF3oJYMS-81">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-75" value="Update T/F conditions used to call the while loop (433-444)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1125" y="1800" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-80" target="leyQQa6ndQBqsF3oJYMS-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1520" y="1825" />
+              <mxPoint x="1520" y="815" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-80" value="TRUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1347.5" y="1815" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-142" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-81" target="leyQQa6ndQBqsF3oJYMS-79">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1215" y="1930" />
+              <mxPoint x="850" y="1930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-81" value="FALSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="1895" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-82" value="Calculate the increased/decreased values of M and fecundity (320-401)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="1210" width="155" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-136" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-83" target="leyQQa6ndQBqsF3oJYMS-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-83" value="Recalculate population growth rates using the increased/decreased M and fecundity values (404-406)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="1320" width="155" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-138" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-84" target="leyQQa6ndQBqsF3oJYMS-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-84" value="Use the increased/decreased population growth rates to reproject abundance estimates and assess whether the increased or decreased population growth rates yielded the closer result, then assign the &quot;correct&quot; new values to M and fecundity (409-427)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="1430" width="215" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-147" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-86" target="leyQQa6ndQBqsF3oJYMS-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-86" value="Update the initial abundance to that of the next year in the stock assessment data time series (next in y.index) (500)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="780" y="2310" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-148" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-87" target="leyQQa6ndQBqsF3oJYMS-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-87" target="leyQQa6ndQBqsF3oJYMS-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-87" value="Evaluate the condition of the for loop:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="790" y="2440" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-150" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-88" target="leyQQa6ndQBqsF3oJYMS-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1620" y="2465" />
+              <mxPoint x="1620" y="-285" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-88" value="TRUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="982.5" y="2455" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-151" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-89" target="leyQQa6ndQBqsF3oJYMS-90">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-89" value="FALSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="825" y="2545" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-153" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-90" target="leyQQa6ndQBqsF3oJYMS-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-90" value="Return results of tuning simulation (512-513)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D4E1F5;" vertex="1" parent="1">
+          <mxGeometry x="332.5" y="2650" width="145" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-91" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#EA6B66;" vertex="1" parent="1">
+          <mxGeometry x="395" y="2730" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leyQQa6ndQBqsF3oJYMS-135" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.499;entryY=0.103;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="leyQQa6ndQBqsF3oJYMS-82" target="leyQQa6ndQBqsF3oJYMS-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
